@@ -1,0 +1,18 @@
+# Ignore everything in build/
+build/*
+
+# But keep the obj folder inside build/
+!build/obj/
+!build/obj/**
+
+# Ignore object files everywhere
+*.o
+
+# Ignore editor/OS junk
+*~
+*.swp
+.DS_Store
+
+# Ignore executables
+build/main
+
