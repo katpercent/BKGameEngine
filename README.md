@@ -29,6 +29,11 @@ Control : ZS and arrow
 
 And many more...
 
+## Bibliography
+
+- Tomas Akenine-Möller, Eric Haines. *Real-Time Rendering, Second Edition*. Natick, MA: A K Peters, 2002.  
+  ISBN-10: 1568811829 · ISBN-13: 978-1568811826
+
 ## Contact
 
 Discord : katpercent
