@@ -2,7 +2,7 @@
 #include "../../include/core/World.hpp"
 #include <cstddef>
 
-World::World(std::vector<std::string> meshes, std::vector<vec4> MeshTranslat, std::vector<vec4> MeshRotSize, vec4 WorldRot) {
+World::World(std::vector<std::string> meshes, std::vector<math::vec4> MeshTranslat, std::vector<math::vec4> MeshRotSize, math::vec4 WorldRot) {
     this->mesh = meshes;
     this->MeshTranslation = MeshTranslat;
     this->MeshRotationSize = MeshRotSize;

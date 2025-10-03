@@ -12,14 +12,14 @@ namespace bk_math {
     double degreesToRadians(double degrees);
 
     // Normalise un vecteur (retourne le même si norme = 0)
-    vec4 normalize(const vec4& v);
+    math::vec4 normalize(const math::vec4& v);
 
     // Intersection entre une ligne (lineStart → lineEnd) et un plan
-    vec4 Vector_IntersectPlane(vec4& plane_p, vec4& plane_n,
-                               vec4& lineStart, vec4& lineEnd, float& t);
+    math::vec4 Vector_IntersectPlane(math::vec4& plane_p, math::vec4& plane_n,
+                               math::vec4& lineStart, math::vec4& lineEnd, float& t);
 
     // Découpe un triangle par rapport à un plan
-    int Triangle_ClipAgainstPlane(vec4 plane_p, vec4 plane_n,
+    int Triangle_ClipAgainstPlane(math::vec4 plane_p, math::vec4 plane_n,
                                   triangle& in_tri, triangle& out_tri1, triangle& out_tri2);
 }
 

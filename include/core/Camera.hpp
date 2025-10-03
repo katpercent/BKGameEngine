@@ -8,10 +8,10 @@
 class Camera {
 public:
     // Camera properties
-    vec4 position;       // Position of the camera
-    vec4 forward;        // Forward vector (direction camera is looking at)
-    vec4 up;             // Up vector (orientation)
-    vec4 right;          // Right vector (perpendicular to forward and up)
+    math::vec4 position;       // Position of the camera
+    math::vec4 forward;        // Forward vector (direction camera is looking at)
+    math::vec4 up;             // Up vector (orientation)
+    math::vec4 right;          // Right vector (perpendicular to forward and up)
 
     float aspectRatio;
     float fovHorizontal; // Field of View horizontal in degrees
@@ -21,7 +21,7 @@ public:
     float currentPitch = 0.0f; // Tracks the pitch angle
 
     // Constructor
-    Camera(const vec4& pos, const vec4& target, const vec4& upDir, 
+    Camera(const math::vec4& pos, const math::vec4& target, const math::vec4& upDir, 
            float fovX, float fovY, float nearP, float farP, float aspectR)
         : position(pos), forward(target), up(upDir), fovHorizontal(fovX), fovVertical(fovY), nearPlane(nearP), farPlane(farP), aspectRatio(aspectR) {
         right = forward.crossProduct(upDir).normalize();  // Calculate right vector
@@ -29,16 +29,16 @@ public:
 
     mat4 computeViewMatrix() const {
         // Point at the camera's position, looking in the forward direction
-        vec4 target = position + forward;
+        math::vec4 target = position + forward;
         // Calculate new forward direction
-        vec4 forward = (target - position).normalize();
+        math::vec4 forward = (target - position).normalize();
 
         // Calculate new up direction
-        vec4 a = forward * up.dot(forward);
-        vec4 newUp = (up - a).normalize();
+        math::vec4 a = forward * up.dot(forward);
+        math::vec4 newUp = (up - a).normalize();
 
         // New right direction
-        vec4 right = newUp.crossProduct(forward);
+        math::vec4 right = newUp.crossProduct(forward);
 
         // Construct rotation matrix
         mat4 cameraRot;
@@ -124,4 +124,4 @@ public:
     }
 };
 
-#endif // CAMERA_H
+#endif // CAMERA_HPP

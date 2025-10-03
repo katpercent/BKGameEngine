@@ -5,10 +5,10 @@
 
 class triangle {
 public:
-	vec4 p[3];
-    vec4 col[3];
-    //vec2 tex[3];
-    vec4 normal;
+  math::vec4 p[3];
+  math::vec4 col[3];
+  //vec2 tex[3];
+  math::vec4 normal;
 };
 
 #endif

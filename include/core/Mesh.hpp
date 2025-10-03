@@ -10,11 +10,10 @@
 class Mesh {
 public:
 	std::string path;
-    std::vector<triangle> tris;
-    vec4 position;
-    vec4 rotation;
-
-    bool LoadFromObjectFile(const std::string& sFilename);
+  std::vector<triangle> tris;
+  math::vec4 position;
+  math::vec4 rotation;
+  bool LoadFromObjectFile(const std::string& sFilename);
 	void Scale(float scaleFactor);
 	void ChangePos(float x, float y, float z);
 };

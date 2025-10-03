@@ -2,13 +2,13 @@
 #include "../../include/core/vec4.hpp"
 #include <cmath>
 
-vec4 mat4::operator*(const vec4& vec) const {
+math::vec4 mat4::operator*(const math::vec4& vec) const {
     // Perform matrix-vector multiplication (result = matrix * vector)
     float newX = vec.x * m[0][0] + vec.y * m[0][1] + vec.z * m[0][2] + vec.w * m[0][3];
     float newY = vec.x * m[1][0] + vec.y * m[1][1] + vec.z * m[1][2] + vec.w * m[1][3];
     float newZ = vec.x * m[2][0] + vec.y * m[2][1] + vec.z * m[2][2] + vec.w * m[2][3];
     float newW = vec.x * m[3][0] + vec.y * m[3][1] + vec.z * m[3][2] + vec.w * m[3][3];
-    return vec4(newX, newY, newZ, newW);
+    return math::vec4(newX, newY, newZ, newW);
 }
 
 mat4 mat4::operator*(const mat4& matrix) const {
@@ -39,7 +39,7 @@ void mat4::MatrixMakeIdentity() {
     m[3][3] = 1.0;
 };
 
-void mat4::Translation(vec4& coordinates)
+void mat4::Translation(math::vec4& coordinates)
 {
     this->MatrixMakeIdentity();
     this->m[0][3] = coordinates.x;

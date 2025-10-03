@@ -4,7 +4,7 @@ double bk_math::degreesToRadians(double degrees) {
     return degrees * (M_PI / 180.0);
 }
 
-vec4 bk_math::normalize(const vec4& v) {
+math::vec4 bk_math::normalize(const math::vec4& v) {
     if (v.magnitude() == 0) {
         return v; // évite la division par 0
     }
@@ -12,8 +12,8 @@ vec4 bk_math::normalize(const vec4& v) {
 }
 
 // Computes the intersection point between a line segment and a plane
-vec4 bk_math::Vector_IntersectPlane(vec4& plane_p, vec4& plane_n,
-                                    vec4& lineStart, vec4& lineEnd, float& t) 
+math::vec4 bk_math::Vector_IntersectPlane(math::vec4& plane_p, math::vec4& plane_n,
+                                    math::vec4& lineStart, math::vec4& lineEnd, float& t) 
 {
     plane_n.normalize();  // Ensure the plane normal is normalized
 
@@ -28,10 +28,10 @@ vec4 bk_math::Vector_IntersectPlane(vec4& plane_p, vec4& plane_n,
     t = (-plane_d - ad) / (bd - ad);
 
     // Direction vector of the line
-    vec4 lineStartToEnd = lineEnd - lineStart;
+    math::vec4 lineStartToEnd = lineEnd - lineStart;
 
     // Scale the direction vector by t to reach the intersection
-    vec4 lineToIntersect = lineStartToEnd * t;
+    math::vec4 lineToIntersect = lineStartToEnd * t;
 
     // Return the intersection point
     return lineStart + lineToIntersect;
@@ -39,19 +39,19 @@ vec4 bk_math::Vector_IntersectPlane(vec4& plane_p, vec4& plane_n,
 
 
 // Clips a triangle against a plane and returns the resulting triangle(s)
-int bk_math::Triangle_ClipAgainstPlane(vec4 plane_p, vec4 plane_n,
+int bk_math::Triangle_ClipAgainstPlane(math::vec4 plane_p, math::vec4 plane_n,
                                        triangle& in_tri, triangle& out_tri1, triangle& out_tri2) 
 {
     plane_n.normalize();  // Ensure the plane normal is normalized
 
     // Lambda to compute signed distance from a point to the plane
-    auto dist = [&](vec4& p) {
+    auto dist = [&](math::vec4& p) {
         return (plane_n.x * p.x + plane_n.y * p.y + plane_n.z * p.z - plane_n.dot(plane_p));
     };
 
     // Arrays to hold vertices classified as inside or outside
-    vec4* inside_points[3];  int nInsidePointCount = 0;
-    vec4* outside_points[3]; int nOutsidePointCount = 0;
+    math::vec4* inside_points[3];  int nInsidePointCount = 0;
+    math::vec4* outside_points[3]; int nOutsidePointCount = 0;
 
     // Compute distances of each vertex of the triangle to the plane
     float d0 = dist(in_tri.p[0]);

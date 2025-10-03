@@ -8,12 +8,11 @@ class World {
 public:
 	std::vector<Mesh> meshes;
 	std::string PathObject3D;
-    std::vector<std::string> mesh;
-    std::vector<vec4> MeshTranslation;
-    std::vector<vec4> MeshRotationSize;
-    vec4 WorldRotation;
-
-    World(std::vector<std::string>, std::vector<vec4>, std::vector<vec4>, vec4);
+  std::vector<std::string> mesh;
+  std::vector<math::vec4> MeshTranslation;
+  std::vector<math::vec4> MeshRotationSize;
+  math::vec4 WorldRotation;
+  World(std::vector<std::string>, std::vector<math::vec4>, std::vector<math::vec4>, math::vec4);
 };
 
 #endif

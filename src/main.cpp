@@ -19,6 +19,8 @@
 
 #define PI 3.1415926535f
 
+using namespace math;
+
 int main()
 {
   SDL_Window* win = NULL;
@@ -238,9 +240,10 @@ int main()
           for (int n = 0; n < nClippedTriangles; n++)
           {                                                                                                  
             for (int o = 0; o < 3; o++) { 
-              // =========================================================================================================
-              // Convert World Space --> View Space (view matrix) and Project triangles from 3D --> 2D (projection matrix)
-              // =========================================================================================================
+              // ======================================================
+              // Convert World Space --> View Space (view matrix) 
+              // Project triangles from 3D --> 2D (projection matrix)
+              // ======================================================
               triProjected.p[o] = camera.computeSpaceMatrix() * triClipped[n].p[o];
               triProjected.p[o] = triProjected.p[o] / triProjected.p[o].w; 
 
@@ -291,3 +294,4 @@ int main()
 
   return 0;
 };
+
