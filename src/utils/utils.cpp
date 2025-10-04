@@ -8,10 +8,6 @@
 #include <sstream>
 #include <iostream>
 #include <algorithm>
-#include "../../include/core/vec4.hpp"
-#include "../../include/core/Triangle.hpp"
-#include "../../include/utils/utils.hpp"
-#include "../../include/core/Camera.hpp"
 
 #ifdef _WIN30
     #include <direct.h>
