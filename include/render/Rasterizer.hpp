@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <limits.h>
 #include <CL/cl.h>
-#include "../../include/core/Triangle.hpp"
+#include "../../include/math/Triangle.hpp"
 #include "../../include/core/Camera.hpp"
 
 void DrawTriangleDepthBufferPerformance(

@@ -2,7 +2,7 @@
 #define MESHES_HPP
 
 #include "Mesh.hpp"
-#include "vec4.hpp"
+#include "../math/vec4.hpp"
 
 class World {
 public:

@@ -34,7 +34,7 @@ double degreesToRadians(double degrees) {
     return degrees * (M_PI / 180.0);
 }
 
-// OpenCL utils (for the future branch OpenCL)
+// OpenCL utils (for the branch OpenCL)
 std::string loadKernel(const char* filename) {
     std::ifstream file(filename);
     if (!file.is_open()) throw std::runtime_error("Impossible d’ouvrir le kernel");

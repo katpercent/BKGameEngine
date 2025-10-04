@@ -1,8 +1,8 @@
 #ifndef MESH_HPP
 #define MESH_HPP
 
-#include "Triangle.hpp"
-#include "vec4.hpp"
+#include "../math/Triangle.hpp"
+#include "../math/vec4.hpp"
 #include <vector>
 #include <string>
 

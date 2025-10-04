@@ -1,5 +1,5 @@
-#include "../../include/core/mat4.hpp"
-#include "../../include/core/vec4.hpp"
+#include "../../include/math/mat4.hpp"
+#include "../../include/math/vec4.hpp"
 #include <cmath>
 
 math::vec4 mat4::operator*(const math::vec4& vec) const {

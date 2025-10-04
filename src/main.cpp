@@ -9,8 +9,8 @@
 #include <CL/cl.h>
 
 // Local libraries
-#include "../include/core/vec4.hpp"
-#include "../include/core/mat4.hpp"
+#include "../include/math/vec4.hpp"
+#include "../include/math/mat4.hpp"
 #include "../include/core/Camera.hpp"
 #include "../include/core/World.hpp"
 #include "../include/utils/utils.hpp"

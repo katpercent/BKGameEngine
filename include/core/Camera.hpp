@@ -2,8 +2,8 @@
 #define CAMERA_HPP
 
 #include <cmath>
-#include "vec4.hpp"
-#include "mat4.hpp"
+#include "../math/vec4.hpp"
+#include "../math/mat4.hpp"
 
 class Camera {
 public:
