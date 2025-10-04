@@ -69,7 +69,7 @@ void DrawTriangleDepthBufferPerformance(
           depthBuffer[index] = pixelDepth;
           numPixels++;
 
-          vec4 point = triProjected.p[0] * alpha + triProjected.p[1] * beta + triProjected.p[2] * gamma;
+          math::vec4 point = triProjected.p[0] * alpha + triProjected.p[1] * beta + triProjected.p[2] * gamma;
 
           frameBuffer[y * ScreenSizeX + x] = 0xFFFFFFFF;
         }
